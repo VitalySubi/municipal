@@ -4,12 +4,15 @@ from django.http import HttpResponse
 
 def index(request):
     #return HttpResponse("Главная")
-    return render(request, "facility/index.html")
+    data = {"header": "Главная", "message": "Добро пожаловать!"}
+    return render(request, "facility/index.html", context=data)
 
 
 def municipal(request):
     id = request.GET.get("municipalId")
-    return HttpResponse(f"Страница муниципалcного учреждения {id}")
+    data = {"id": id}
+    #return HttpResponse(f"Страница муниципального учреждения {id}")
+    return render(request, "facility/municipal_page.html", context=data)
 
 
 def infoSys(request):
