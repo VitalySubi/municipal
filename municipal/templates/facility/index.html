@@ -35,74 +35,61 @@
         </a>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-            <li><a href="#" class="nav-link px-2 link-secondary">Главная</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Функции</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">Ценообразование</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">FAQ</a></li>
-            <li><a href="#" class="nav-link px-2 link-dark">О нас</a></li>
+            <li><a href="/" class="nav-link px-2 link-secondary">Главная</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Профиль</a></li>
+            <li><a href="#" class="nav-link px-2 link-dark">Выход</a></li>
         </ul>
     </header>
 </div>
-<p>{{message}}</p>
-<div><h1>{{header}}</h1></div>
+<!--<p>{{message}}</p>
+<div><h1>{{header}}</h1></div>-->
 <div class="container sidebar-and-content">
     <div><div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Главная
+          Основное
         </button>
         <div class="collapse show" id="home-collapse" style="">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Обзор</a></li>
-            <li><a href="#" class="link-dark rounded">Обновления</a></li>
-            <li><a href="#" class="link-dark rounded">Отчеты</a></li>
+            <li><a href="\municipal" class="link-dark rounded">Муниципальные учреждения</a></li>
+            <li><a href="\department" class="link-dark rounded">ТВСП</a></li>
+            <li><a href="\diagnostics" class="link-dark rounded">Диагностическое оборудование</a></li>
+              <li><a href="\infosys" class="link-dark rounded">Информационные системы</a></li>
           </ul>
         </div>
       </li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Панель
+          Сеть
         </button>
         <div class="collapse" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Обзор</a></li>
-            <li><a href="#" class="link-dark rounded">Еженедельно</a></li>
-            <li><a href="#" class="link-dark rounded">Ежемесячно</a></li>
-            <li><a href="#" class="link-dark rounded">Ежегодно</a></li>
+            <li><a href="\networkstructure" class="link-dark rounded">Сетевые инфраструктуры ТВСП</a></li>
+            <li><a href="\protectednetwork" class="link-dark rounded">Защищённые СПД</a></li>
+            <li><a href="\internetaccess" class="link-dark rounded">Доступы в Интернет</a></li>
+            <li><a href="\localnetwork" class="link-dark rounded">ЛВС</a></li>
           </ul>
         </div>
       </li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Заказы
+          Оборудование
         </button>
         <div class="collapse" id="orders-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Новый</a></li>
-            <li><a href="#" class="link-dark rounded">Обработанный</a></li>
-            <li><a href="#" class="link-dark rounded">Отправленный</a></li>
-            <li><a href="#" class="link-dark rounded">Возвращенный</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="border-top my-3"></li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
-          Account
-        </button>
-        <div class="collapse" id="account-collapse" style="">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Новый...</a></li>
-            <li><a href="#" class="link-dark rounded">Профиль</a></li>
-            <li><a href="#" class="link-dark rounded">Настройка</a></li>
-            <li><a href="#" class="link-dark rounded">Выйти</a></li>
+            <li><a href="\computer" class="link-dark rounded">АРМы</a></li>
+            <li><a href="\sysbody" class="link-dark rounded">Системные блоки</a></li>
+            <li><a href="\display" class="link-dark rounded">Мониторы</a></li>
+            <li><a href="\mouse" class="link-dark rounded">Компьютерные мыши</a></li>
+            <li><a href="\keyboard" class="link-dark rounded">Клавиатуры</a></li>
+              <li><a href="\software" class="link-dark rounded">ПО</a></li>
           </ul>
         </div>
       </li>
     </ul>
   </div></div>
-    <div>{% block MAIN_CONTENT %}Основной контент раздела{% endblock MAIN_CONTENT %}</div>
+    <div class="content-main">{% block MAIN_CONTENT %}Основной контент раздела{% endblock MAIN_CONTENT %}</div>
 </div>
 <!--<div style="border-top: solid 1px; border-color: grey">-->
 <div class="container footer-bottom">
@@ -113,7 +100,7 @@
                     <use xlink:href="#bootstrap"></use>
                 </svg>
             </a>
-            <span class="text-muted">© 2022 Компания</span>
+            <span class="text-muted">© {% now "Y" %} Компания</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
