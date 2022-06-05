@@ -32,49 +32,49 @@ def tvsp(request):
 
 def tvspNetworkStructure(request):
     #return HttpResponse("Страница сетевой инфраструктуры ТВСП")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/networkstructure_page.html")
 
 
 def localNetwork(request):
     #return HttpResponse("Страница ЛВС")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/localnetwork_page.html")
 
 
 def protectedNetwork(request):
     #return HttpResponse("Страница защищённой СПД")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/protectednetwork_page.html")
 
 
 def internetAccess(request):
     #return HttpResponse("Страница доступа в Интернет")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/internetaccess_page.html")
 
 
 def computer(request):
     #return HttpResponse("Страница АРМ")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/computer_page.html")
 
 
 def sysBody(request):
     #return HttpResponse("Страница системного блока")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/sysbody_page.html")
 
 
 def display(request):
     #return HttpResponse("Страница монитора")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/display_page.html")
 
 
 def mouse(request):
     #return HttpResponse("Страница мыши")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/mouse_page.html")
 
 
 def keyboard(request):
     #return HttpResponse("Страница клавиатуры")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/keyboard_page.html")
 
 
 def software(request):
     #return HttpResponse("Страница ПО")
-    return render(request, "facility/municipal_page.html")
+    return render(request, "facility/software_page.html")
