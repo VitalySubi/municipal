@@ -1,0 +1,67 @@
+{% extends "facility/index.html" %}
+{% block TITLE %}Добавление нового монитора{% endblock TITLE %}
+{% block MAIN_CONTENT %}
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script>
+$(function() {
+    $("#datepicker").datepicker({
+  dateFormat: "dd/mm/yy"
+});
+});
+</script>
+
+<h4>Добавление нового монитора</h4>
+
+<div>
+    <form method="post" action="/monitor/save">
+        {% csrf_token %}
+        <div style="display: flex; flex-direction: column;">
+            <div style="display: flex; margin: 10px 0;">
+                <div style="width: 200px;">
+                    <label for="mon_model">Модель:</label>
+                </div>
+                <div style="flex-grow: 8;">
+                    <input type="text" name="model" required id="mon_model" style="width: 100%;"/>
+                </div>
+            </div>
+            <div style="display: flex; margin: 10px 0;">
+                <div style="width: 200px;">
+                    <label for="mon_diag">Диагональ:</label>
+                </div>
+                <div style="flex-grow: 8;">
+                    <input type="text" name="diag" required id="mon_diag" style="width: 100%;"/>
+                </div>
+            </div>
+            <div style="display: flex; margin: 10px 0;">
+                <div style="width: 200px;">
+                    <label for="mon_inv">Инвентарный номер:</label>
+                </div>
+                <div style="flex-grow: 8;">
+                    <input type="text" name="inv" required id="mon_inv" style="width: 100%;"/>
+                </div>
+            </div>
+            <div style="display: flex; margin: 10px 0;">
+                <div style="width: 200px;">
+                    <label for="datepicker">Дата приобретения:</label>
+                </div>
+                <div style="flex-grow: 8;">
+                    <input type="text" name="date" required id="datepicker" style="width: 100%;"/>
+                </div>
+              </div>
+            <div style="display: flex; margin: 10px 0;">
+                <div style="width: 200px;">
+                    <label for="mon_arm">АРМ:</label>
+                </div>
+                <div style="flex-grow: 8;">
+                    <input type="text" name="arm" id="mon_arm" style="width: 100%;"/>
+                </div>
+            </div>
+            <input type="submit" value="Добавить" style="margin: 20px auto;">
+        </div>
+    </form>
+</div>
+
+{% endblock MAIN_CONTENT %}

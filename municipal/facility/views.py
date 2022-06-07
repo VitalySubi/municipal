@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from datetime import datetime
+
+from .models import Monitor
 
 sideBarParams = {"main": {"collapsed": "collapsed", "expanded": "false", "show": ""},
                  "network": {"collapsed": "collapsed", "expanded": "false", "show": ""},
@@ -128,11 +131,27 @@ def sysBlockView(request):
 
 
 def monitorView(request):
+    monitors = Monitor.objects.all()
+    print(monitors)
     expandByKey("facility")
     selectByKey("monitor")
-    data = {"sideBarParams": sideBarParams, "itemsSelection": itemsSelection}
+    data = {"sideBarParams": sideBarParams, "itemsSelection": itemsSelection, "monitors": monitors}
     #return HttpResponse("Страница монитора")
     return render(request, "facility/monitor_page.html", context=data)
+
+
+def monitorNewView(request):
+    return render(request, "facility/add/monitor_new_page.html", context=None)
+
+
+def monitorSaveView(request):
+    newMonitor = Monitor(monmodel=request.POST.get("model"),
+                         mondiag=request.POST.get("diag"),
+                         moninv=request.POST.get("inv"),
+                         mondate=datetime.strptime(request.POST.get("date"), "%d/%m/%Y"),
+                         equid=None if request.POST.get("arm") == "" else request.POST.get("arm"))
+    newMonitor.save()
+    return redirect("/monitor", context=None)
 
 
 def mouseView(request):

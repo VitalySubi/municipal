@@ -13,7 +13,7 @@
     </div>
 </div>-->
 
-<button type="button" class="btn btn-dark mt-3 mb-3"> Добавить монитор </button>
+<a href="monitor/add"><button type="button" class="btn btn-dark mt-3 mb-3"> Добавить монитор </button></a>
 
 <table class="table table-striped table-hover">
     <thead>
@@ -26,41 +26,15 @@
     </tr>
     </thead>
     <tbody>
+    {% for monitor in monitors %}
     <tr>
-        <th scope="row">1</th>
-        <td>HP</td>
-        <td>19</td>
-        <td>46353754</td>
-        <td>01.12.2020</td>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{monitor.monmodel}}</td>
+        <td>{{monitor.mondiag}}</td>
+        <td>{{monitor.moninv}}</td>
+        <td>{{monitor.mondate|date:"d/m/Y"}}</td>
     </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td>Acer</td>
-        <td>21</td>
-        <td>363735</td>
-        <td>14.10.2021</td>
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td>Dell</td>
-        <td>22</td>
-        <td>6246835</td>
-        <td>22.02.2018</td>
-    </tr>
-    <tr>
-        <th scope="row">4</th>
-        <td>Lenovo</td>
-        <td>19</td>
-        <td>45743763</td>
-        <td>07.06.2021</td>
-    </tr>
-    <tr>
-        <th scope="row">5</th>
-        <td>Toshiba</td>
-        <td>17</td>
-        <td>436274</td>
-        <td>20.04.2019</td>
-    </tr>
+    {% endfor %}
     </tbody>
 </table>
 
