@@ -12,3 +12,7 @@ body{
     flex-grow: 1;
     padding: 16px;
 }
+
+.on-selected{
+    background-color: #d2f4ea;
+}

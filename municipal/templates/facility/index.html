@@ -44,51 +44,7 @@
 <!--<p>{{message}}</p>
 <div><h1>{{header}}</h1></div>-->
 <div class="container sidebar-and-content">
-    <div><div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Основное
-        </button>
-        <div class="collapse show" id="home-collapse" style="">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="\municipal" class="link-dark rounded">Муниципальные учреждения</a></li>
-            <li><a href="\department" class="link-dark rounded">ТВСП</a></li>
-            <li><a href="\diagnostics" class="link-dark rounded">Диагностическое оборудование</a></li>
-              <li><a href="\infosys" class="link-dark rounded">Информационные системы</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Сеть
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="\networkstructure" class="link-dark rounded">Сетевые инфраструктуры ТВСП</a></li>
-            <li><a href="\protectednetwork" class="link-dark rounded">Защищённые СПД</a></li>
-            <li><a href="\internetaccess" class="link-dark rounded">Доступы в Интернет</a></li>
-            <li><a href="\localnetwork" class="link-dark rounded">ЛВС</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Оборудование
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="\computer" class="link-dark rounded">АРМы</a></li>
-            <li><a href="\sysbody" class="link-dark rounded">Системные блоки</a></li>
-            <li><a href="\display" class="link-dark rounded">Мониторы</a></li>
-            <li><a href="\mouse" class="link-dark rounded">Компьютерные мыши</a></li>
-            <li><a href="\keyboard" class="link-dark rounded">Клавиатуры</a></li>
-              <li><a href="\software" class="link-dark rounded">ПО</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div></div>
+    {% block SIDE_BAR %}{% include "facility/includes/side_bar.html" with sideBarParams=sideBarParams itemsSelection=itemsSelection %}{% endblock SIDE_BAR %}
     <div class="content-main">{% block MAIN_CONTENT %}Основной контент раздела{% endblock MAIN_CONTENT %}</div>
 </div>
 <!--<div style="border-top: solid 1px; border-color: grey">-->

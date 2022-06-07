@@ -1,0 +1,64 @@
+<div>
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+        <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded {{sideBarParams.main.collapsed}}"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse"
+                        aria-expanded={{sideBarParams.main.expanded}}>
+                    Основное
+                </button>
+                <div class="collapse {{sideBarParams.main.show}}" id="home-collapse" style="">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="\municipal" class="link-dark rounded {{itemsSelection.municipal}}">Муниципальные
+                            учреждения</a></li>
+                        <li><a href="\department" class="link-dark rounded {{itemsSelection.tvsp}}">ТВСП</a></li>
+                        <li><a href="\diagnostics" class="link-dark rounded {{itemsSelection.diagnostics}}">Диагностическое
+                            оборудование</a></li>
+                        <li><a href="\infosys" class="link-dark rounded {{itemsSelection.infoSys}}">Информационные
+                            системы</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded {{sideBarParams.network.collapsed}}"
+                        data-bs-toggle="collapse" data-bs-target="#dashboard-collapse"
+                        aria-expanded={{sideBarParams.network.expanded}}>
+                    Сеть
+                </button>
+                <div class="collapse {{sideBarParams.network.show}}" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="\networkstructure"
+                               class="link-dark rounded {{itemsSelection.tvspNetworkStructure}}">Сетевые инфраструктуры
+                            ТВСП</a></li>
+                        <li><a href="\protectednetwork" class="link-dark rounded {{itemsSelection.protectedNetwork}}">Защищённые
+                            СПД</a></li>
+                        <li><a href="\internetaccess" class="link-dark rounded {{itemsSelection.internetAccess}}">Доступы
+                            в Интернет</a></li>
+                        <li><a href="\localnetwork" class="link-dark rounded {{itemsSelection.localNetwork}}">ЛВС</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded {{sideBarParams.facility.collapsed}}"
+                        data-bs-toggle="collapse" data-bs-target="#orders-collapse"
+                        aria-expanded={{sideBarParams.facility.expanded}}>
+                    Оборудование
+                </button>
+                <div class="collapse {{sideBarParams.facility.show}}" id="orders-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="\computer" class="link-dark rounded {{itemsSelection.computer}}">АРМы</a></li>
+                        <li><a href="\sysBlock" class="link-dark rounded {{itemsSelection.sysBlock}}">Системные блоки</a>
+                        </li>
+                        <li><a href="\monitor" class="link-dark rounded {{itemsSelection.monitor}}">Мониторы</a></li>
+                        <li><a href="\mouse" class="link-dark rounded {{itemsSelection.mouse}}">Компьютерные мыши</a>
+                        </li>
+                        <li><a href="\keyboard" class="link-dark rounded {{itemsSelection.keyboard}}">Клавиатуры</a>
+                        </li>
+                        <li><a href="\software" class="link-dark rounded {{itemsSelection.software}}">ПО</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
